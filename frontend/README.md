@@ -1,16 +1,30 @@
-# React + Vite
+# AirResolve AI — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This is the React + Vite frontend for **AirResolve AI**, deployed on Vercel at [https://air-resolve-aionos.vercel.app/](https://air-resolve-aionos.vercel.app/).
 
-Currently, two official plugins are available:
+## Features
+- **Real-Time Customer & Booking Inspector**: Visualizes active customer details, PNR status, and compensation entitlements.
+- **Auditing & Live Action Feed**: Shows executed rebookings, meal vouchers, refund IDs, or escalation tickets.
+- **Scenario Quick-Loader**: 1-click loading for Priya Nair, Arvind Kulkarni, and Meher Kaur test personas.
+- **Glassmorphic Modern UI**: Built with Tailwind CSS and Lucide icons.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Environment Configuration
 
-## React Compiler
+In development, Vite defaults to `http://localhost:8000`. In production on Vercel, set the following environment variable:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```env
+VITE_API_URL=https://<your-render-backend-url>
+```
 
-## Expanding the Oxlint configuration
+## Local Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
