@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2026-09-20T14:31:48.169464Z",
+    "customer": "Priya Nair",
+    "pnr": "UNKNOWN",
+    "intent": "refund",
+    "policy_checked": "Cancellation Rebooking Rule",
+    "decision": "EXECUTE",
+    "reason": "Eligible for refund",
+    "action": "Refund initiated"
+  },
+  {
+    "timestamp": "2026-09-20T14:35:59.295737Z",
+    "customer": "Priya Nair",
+    "pnr": "SK4821X",
+    "intent": "refund",
+    "policy_checked": "Cancellation Rebooking Rule",
+    "decision": "EXECUTE",
+    "reason": "Eligible for refund",
+    "action": "Refund initiated"
+  },
+  {
+    "timestamp": "2026-09-20T15:00:24.861774Z",
+    "customer": "Arvind Kulkarni",
+    "pnr": "TR1190B",
+    "intent": "escalation",
+    "policy_checked": "Multiple",
+    "decision": "ESCALATE",
+    "reason": "Hotel requested but delay < 5 hours",
+    "action": "Supervisor approval required"
+  }
+]

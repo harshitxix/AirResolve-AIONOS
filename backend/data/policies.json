@@ -1,0 +1,64 @@
+{
+  "policies": {
+    "cancellation": {
+      "condition": "airline_caused",
+      "entitlements": [
+        "free_rebooking_next_available_24h",
+        "full_refund"
+      ],
+      "refund_details": {
+        "amount": "full",
+        "timeframe": "7 business days",
+        "method": "original payment method"
+      }
+    },
+    "delay": {
+      "thresholds": [
+        {
+          "min_hours": 0,
+          "max_hours": 3,
+          "entitlements": ["meal_voucher"]
+        },
+        {
+          "min_hours": 3,
+          "max_hours": 5,
+          "entitlements": ["meal_voucher", "lounge_access"]
+        },
+        {
+          "min_hours": 5,
+          "max_hours": 999,
+          "entitlements": ["meal_voucher", "lounge_access", "hotel_accommodation"],
+          "hotel_details": "covers ONLY delayed hours, NOT a full night's stay"
+        }
+      ]
+    },
+    "fare_difference": {
+      "agent_waiver_limit": 1500,
+      "rule": "customer pays fare difference above 1500; requires supervisor approval for higher waivers"
+    },
+    "loyalty": {
+      "tiers": ["Gold", "Platinum"],
+      "benefits": ["priority_rebooking", "first_access_next_available_seats"],
+      "restrictions": "no additional compensation beyond standard policy"
+    }
+  },
+  "agent_authority": {
+    "allowed": [
+      "rebook on next available flight within 24h at no charge when airline-caused",
+      "issue meal voucher per delay policy",
+      "issue lounge access per delay policy",
+      "arrange hotel accommodation per delay policy",
+      "initiate refund request for airline-caused cancellations",
+      "provide customer booking and flight status"
+    ],
+    "prohibited_requires_escalation": [
+      "approve compensation beyond stated policy",
+      "waive fare difference above ₹1,500",
+      "make exceptions for non-airline-caused disruptions",
+      "handle threats of legal action",
+      "handle formal complaints",
+      "process refund to different payment method",
+      "perform any action where required authority is missing"
+    ]
+  }
+}
