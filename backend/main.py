@@ -38,6 +38,11 @@ class ChatRequest(BaseModel):
 # Global in-memory state store for the assignment demo
 SESSION_STORE = {}
 
+@app.get("/")
+@app.get("/health")
+def health_check():
+    return {"status": "ok", "service": "AirResolve AI Backend"}
+
 @app.post("/chat")
 def chat_endpoint(request: ChatRequest):
     session_id = request.session_id

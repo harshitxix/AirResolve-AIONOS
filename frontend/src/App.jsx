@@ -6,7 +6,7 @@ import { Plane, ShieldCheck, Loader2, Sparkles, RefreshCw } from 'lucide-react';
 import axios from 'axios';
 
 const SESSION_ID = "demo-" + Math.floor(Math.random() * 100000);
-const API_BASE = 'http://localhost:8000';
+const API_BASE = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '');
 
 function App() {
   const [customer, setCustomer] = useState(null);
